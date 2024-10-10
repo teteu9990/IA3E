@@ -8,50 +8,52 @@ const perguntas = [//abre a lista de objetos (itens)
         enunciado: "Você gosta da Inteligência Artificial?",
         alternativas: [{
             texto: "Sim",
-            afirmação: "Sim para questões do dia dia"
+            afirmação: "Afirmação da alternativa 1"
         },
         {
             texto: "Não",
-            afirmação: "Só para realizar pesquisas"
+            afirmação: "Afirmação da alternativa"
         }
         ]
     },
     {
-        enunciado: "Você sabe usar a IA's",
+        enunciado: "Pergunta 2",
         alternativas: [{
             texto: "Quem sabe...",
-            afirmação: "Nunca me interesei em saber"
+            afirmação: "Afirmação da alternativa 1"
         },
         {
             texto:"Talvez",
-            afirmação:"Prefiro não usar essas parada"
+            afirmação:"Afirmação da alternativa 2"
         }
         ]
     },
     {
-        enunciado: "Quando usa IA no seu cotidiano",
+        enunciado: "Pergunta 3",
         alternativas: [{
             texto: "Sim",
-            afirmação: "Na hora das prova"
+            afirmação: "Afirmação da alternativa 1"
         },
         {
             texto: "Não",
-            afirmação: "Não uso prefiro usar informações do jornal"
+            afirmação: "Afirmação da alternativa"
         }
         ]
     }
 ]
 let posicao = 0;
 let perguntaAtual;
-let respostaa = "";
+let respostas = "";
+
 
 function mostraPergunta() {
-    if(posicao>=perguntas.length)
+    if (posicao>=perguntas.length){
         mostraResultado();
         return;
+    }
     perguntaAtual = perguntas[posicao];
     caixaPergunta.textContent = perguntaAtual.enunciado;
-    caixaAlternativa.textContent=" ";
+    caixaAlternativa.textContent = " ";
     mostraAlternativas();
 }
 function mostraAlternativas() {
@@ -61,13 +63,16 @@ function mostraAlternativas() {
         botaoAlternativas.addEventListener("click",  () => respostasSelecionadas(alternativa));
         caixaAlternativa.appendChild(botaoAlternativas);
     }
+}
 function respostasSelecionadas(opcaoSelecionada){
-    const afirmacoes = (opcaoSelecionada.afirmação;
-    respostas = afirmacoes    
-    posicao++,
+    const afirmacoes = opcaoSelecionada.afirmação;
+    respostas += afirmacoes + " ";
+    posicao++;
     mostraPergunta();
 }
 function mostraResultado(){
-    caixaPergunta.textContent = "Daqui 10 anos vou ta rico...";
+    caixaPergunta.textContent = "Confira suas respostas: ";
+    textoResultado.textContent = respostas; 
+    caixaAlternativa.textContent = "";
 }
 mostraPergunta();
