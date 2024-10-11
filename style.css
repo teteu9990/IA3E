@@ -1,27 +1,23 @@
-:root{
-    --cor-fundo: #010e09;
-    --cor-principal: #0b0d20;
-    --cor-secundaria: #302133;
-    --cor-destaque: #2dbefd;
-    --cor-texto: #D7F9FF;
-}
-body{
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-button{
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    border: none;
-    border-radius: 15px;
-    padding: 15px;
-    transition: background-color 0.3s;
-}
-button:hover{
-    background-color: var(--cor-destaque);
-    color: var(--cor-principal);
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SKATE SALVA!</title>
+</head>
+
+<body>
+    <div class="caixa-principal">
+        <h1>Você decide o futuro da IA</h1>
+        <div class="caixa-pergunta"></div>
+        <div class="caixa-alternativa"></div>
+        <div class="caixa-resultado">
+            <p class="texto-resultado"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
